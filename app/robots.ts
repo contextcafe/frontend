@@ -6,6 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
+        disallow: ["/bakers/", "/advocates/"],
       },
     ],
     sitemap: "https://contextcafe.com/sitemap.xml",
