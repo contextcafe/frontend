@@ -5,6 +5,9 @@ import { Shield, Lock, FileText, UserCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
+import { createClient } from "@/lib/supabase/server";
+import { SignOutButton } from "@/components/bakers/sign-out-button";
+
 // Search Engine Exclusion & Internal Admin Only Metadata
 export const metadata: Metadata = {
   title: "Bakers Portal (Internal Admin) | ContextCafe",
@@ -20,11 +23,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BakersLayout({
+export default async function BakersLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 selection:bg-indigo-600 relative flex flex-col">
       {/* Internal Navigation Header */}
@@ -52,11 +58,15 @@ export default function BakersLayout({
             <Badge variant="secondary" className="hidden sm:inline-flex text-xs gap-1">
               <Lock className="h-3 w-3 text-indigo-600" /> Company Internal Portal
             </Badge>
-            <Link href="/bakers/login">
-              <Button variant="outline" size="sm" className="gap-1.5 text-xs">
-                <span>Sign In</span>
-              </Button>
-            </Link>
+            {user ? (
+              <SignOutButton />
+            ) : (
+              <Link href="/bakers/login">
+                <Button variant="outline" size="sm" className="gap-1.5 text-xs">
+                  <span>Sign In</span>
+                </Button>
+              </Link>
+            )}
           </div>
         </div>
       </header>

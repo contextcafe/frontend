@@ -1,6 +1,26 @@
 import { OnboardingForm } from "@/components/bakers/onboarding-form";
+import { createClient } from "@/lib/supabase/server";
+import { redirect } from "next/navigation";
 
-export default function OnboardingPage() {
+export default async function OnboardingPage() {
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  
+  if (!user) {
+    redirect("/bakers/login");
+  }
+
+  // Check if they already have a profile to prevent redirect loops
+  const { data: profile } = await supabase
+    .from("BakerProfile")
+    .select("id")
+    .eq("id", user.id)
+    .single();
+
+  if (profile) {
+    redirect("/bakers");
+  }
+
   return (
     <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-slate-50 py-12 px-4 sm:px-6 lg:px-8">
       {/* Dynamic Background */}

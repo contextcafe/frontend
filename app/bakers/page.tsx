@@ -18,7 +18,7 @@ export default async function BakersDashboardPage() {
     redirect("/bakers/login");
   }
 
-  // Fetch baker profile to ensure they are a baker (and maybe pass bakerId)
+  // Fetch baker profile to ensure they are a baker
   const { data: profile } = await supabase
     .from("BakerProfile")
     .select("*")
@@ -29,6 +29,11 @@ export default async function BakersDashboardPage() {
     // If they logged in but have no profile, they should do onboarding
     redirect("/bakers/onboarding");
   }
+
+  // Fetch stats for overview table
+  const { count: totalActs } = await supabase.from("Act").select("*", { count: "exact", head: true });
+  const { count: verifiedActs } = await supabase.from("Act").select("*", { count: "exact", head: true }).eq("isVerified", true);
+  const { count: pendingActs } = await supabase.from("Act").select("*", { count: "exact", head: true }).eq("isVerified", false);
 
   return (
     <main className="min-h-screen bg-slate-50 relative pb-24">
@@ -44,6 +49,22 @@ export default async function BakersDashboardPage() {
           <p className="text-slate-500 mt-2 text-sm sm:text-base">
             Browse, search, and manage the bare acts database.
           </p>
+        </div>
+
+        {/* Stats Overview */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col transition-all hover:shadow-md">
+            <span className="text-sm font-medium text-slate-500 mb-1">Total Acts</span>
+            <span className="text-3xl font-bold text-slate-800">{totalActs ?? 0}</span>
+          </div>
+          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col transition-all hover:shadow-md">
+            <span className="text-sm font-medium text-emerald-600 mb-1">Verified Acts</span>
+            <span className="text-3xl font-bold text-emerald-700">{verifiedActs ?? 0}</span>
+          </div>
+          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col transition-all hover:shadow-md">
+            <span className="text-sm font-medium text-amber-600 mb-1">Pending Acts</span>
+            <span className="text-3xl font-bold text-amber-700">{pendingActs ?? 0}</span>
+          </div>
         </div>
 
         {/* Client-side interactivity: search, infinite scroll list, filtering */}
