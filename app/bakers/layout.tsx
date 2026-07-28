@@ -43,15 +43,6 @@ export default async function BakersLayout({
                 ContextCafe <span className="text-indigo-600 font-normal text-sm font-mono">[Bakers Admin]</span>
               </span>
             </Link>
-
-            <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
-              <Link href="/bakers/acts-index" className="hover:text-indigo-600 transition-colors flex items-center gap-1.5">
-                <FileText className="h-4 w-4" /> Acts Management
-              </Link>
-              <Link href="/bakers/Profile" className="hover:text-indigo-600 transition-colors flex items-center gap-1.5">
-                <UserCheck className="h-4 w-4" /> Admin Profile
-              </Link>
-            </nav>
           </div>
 
           <div className="flex items-center gap-3">
