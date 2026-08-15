@@ -2,6 +2,14 @@ import { type NextRequest } from "next/server";
 import { updateSession } from "@/lib/supabase/middleware";
 
 export async function proxy(request: NextRequest) {
+  const pathname = request.nextUrl.pathname;
+
+  // PDFWorks is a public, independent micro-app.
+  // Do not run ContextCafe/Supabase session middleware on it.
+  if (pathname === "/tools/pdf" || pathname.startsWith("/tools/pdf/")) {
+    return NextResponse.next();
+  }
+
   return await updateSession(request);
 }
 
