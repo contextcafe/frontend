@@ -6,7 +6,7 @@ import { ArrowLeft, HardHat, Sparkles } from "lucide-react";
 export default function AdvocatesPage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-14rem)] py-8 px-4 text-center">
-      <div className="max-w-2xl w-full mx-auto glass-panel p-8 sm:p-12 rounded-3xl border border-slate-200/80 shadow-xl relative overflow-hidden flex flex-col items-center">
+      <div className="max-w-2xl w-full mx-auto glass-panel p-8 sm:p-12 rounded-xl border border-slate-200/80 shadow-xl relative overflow-hidden flex flex-col items-center">
         {/* Ambient Glows */}
         <div className="absolute -top-24 -right-24 w-60 h-60 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute -bottom-24 -left-24 w-60 h-60 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
