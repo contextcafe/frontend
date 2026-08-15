@@ -10,17 +10,19 @@ const nextConfig: NextConfig = {
   },
 
   /* Expose separate @contextcafe/tools/pdf-workspace micro-app under /tools/pdf route on runtime */
-  async rewrites() {
-    return [
-      {
-        source: "/tools/pdf",
-        destination: `${PDF_TOOL_APP_URL}/tools/pdf`,
-      },
-      {
-        source: "/tools/pdf/:path*",
-        destination: `${PDF_TOOL_APP_URL}/tools/pdf/:path*`,
-      },
-    ];
+ async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: "/tools/pdf",
+          destination: `${PDF_TOOL_APP_URL}/tools/pdf`,
+        },
+        {
+          source: "/tools/pdf/:path*",
+          destination: `${PDF_TOOL_APP_URL}/tools/pdf/:path*`,
+        },
+      ],
+    };
   },
 };
 
