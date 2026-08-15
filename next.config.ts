@@ -10,7 +10,8 @@ const nextConfig: NextConfig = {
   },
 
   /* Expose separate @contextcafe/tools/pdf-workspace micro-app under /tools/pdf route on runtime */
- async rewrites() {
+  async rewrites() {
+
     return {
       beforeFiles: [
         {
@@ -25,5 +26,6 @@ const nextConfig: NextConfig = {
     };
   },
 };
+
 
 export default nextConfig;
