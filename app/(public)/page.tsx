@@ -92,8 +92,7 @@ export default function LandingPage() {
 
             <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-5">
               <div className="flex items-center gap-2.5">
-                <Image src="/logo.svg" alt="ContextCafe" width={24} height={24} className="h-6 w-auto" />
-                <span className="text-sm font-bold text-slate-900">Bare Act & Section Research Engine</span>
+                <span className="text-2xl font-bold text-slate-900">Bare Act & Section Research Engine</span>
               </div>
             </div>
 
@@ -110,12 +109,12 @@ export default function LandingPage() {
 
               <div className="p-4 rounded-lg bg-slate-50 border border-slate-200/90 space-y-1.5">
                 <div className="flex items-center justify-between mb-1">
-                  <span className="text-xs font-bold text-slate-900 flex items-center gap-1.5">
+                  <span className="text-sm font-bold text-slate-900 flex items-center gap-1.5">
                     <Sparkles className="h-3.5 w-3.5 text-blue-600" /> Statutory Provision Summary
                   </span>
                   <span className="text-[11px] font-mono text-slate-700 font-semibold">Bharatiya Nyaya Sanhita 2023</span>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-800 leading-relaxed font-normal">
+                <p className="text-sm sm:text-sm text-slate-800 leading-relaxed font-normal">
                   Whoever commits murder shall be punished with death or imprisonment for life, and shall also be liable to fine. Where a group of 5 or more persons acts in concert on grounds of race, caste, or community, each member shall be punished with death or life imprisonment.
                 </p>
               </div>
@@ -251,22 +250,22 @@ export default function LandingPage() {
             <div className="relative z-10">
               <div className="flex items-start justify-left gap-4 mb-4">
                 <div className="h-11 w-11 rounded-lg bg-blue-600 text-white flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform duration-300">
-                  <FileText className="h-5.5 w-5.5 stroke-[2.2]" />
+                  <FileText className="h-5 w-5 stroke-[2.2]" />
                 </div>
                 <div >
-                <span className="font-black text-slate-900 font-sans text-md sm:text-2xl tracking-tight">
+                <span className="font-black text-slate-900 font-sans text-xl sm:text-3xl tracking-tight">
                   PDF<span className="text-[#0F62FE]">Works</span>
                 </span>
-                <span className="text-lg font-bold text-slate-900 ml-1.5 tracking-tight">
+                <span className="text-2xl font-bold text-slate-900 ml-1.5 tracking-tight">
                      Suite
               </span>
               </div>
               </div>
 
-              <h3 className="text-lg font-semibold text-slate-900 mb-1 tracking-tight">
+              <h3 className="text-2xl font-bold text-slate-900 mb-1 tracking-tight">
                Local-First Legal PDF Workspace
               </h3>
-              <p className="text-slate-600 text-xs leading-relaxed mb-5">
+              <p className="text-slate-600 text-sm font-semibold leading-relaxed mb-5">
                 Compress court petitions under portal limits, merge trial exhibits, extract order pages, and convert photos into clean A4 PDFs with zero server uploads.
               </p>
 
@@ -274,7 +273,7 @@ export default function LandingPage() {
                 {["Compress", "Merge", "Split", "Image to PDF", "Organize"].map((tag) => (
                   <span
                     key={tag}
-                    className="inline-block rounded-md bg-slate-100 px-2 py-0.5 text-[10px] font-medium text-slate-700 group-hover:bg-slate-200/80 group-hover:text-slate-900 transition-colors duration-200"
+                    className="inline-block rounded-md bg-slate-100 px-2 py-0.5 text-[14px] font-medium text-slate-700 group-hover:bg-slate-200/80 group-hover:text-slate-900 transition-colors duration-200"
                   >
                     {tag}
                   </span>
@@ -284,7 +283,7 @@ export default function LandingPage() {
 
             <div className="relative z-10">
               <Link href="/tools/pdf">
-                <Button variant="primary" className="w-full gap-2 text-xs h-9.5 font-bold">
+                <Button variant="glow" className="gap-2 text-sm h-11 px-6 ">
                   <span>Launch PDFWorks</span>
                   <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform duration-200" />
                 </Button>
