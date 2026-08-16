@@ -21,6 +21,8 @@ const buttonVariants = cva(
           "bg-red-600 text-white hover:bg-red-700 shadow-md shadow-red-600/20",
         accent:
           "bg-indigo-600 text-white hover:bg-indigo-700 shadow-md shadow-indigo-600/20 border border-indigo-500",
+        primary:
+          "flex items-center gap-2 rounded-xl bg-slate-900 px-7 py-4 text-sm font-bold text-white shadow-md shadow-slate-900/20 hover:bg-slate-800 transition-all duration-200 cursor-pointer active:scale-[0.98]",
       },
       size: {
         default: "h-11 px-6 py-2.5 text-base rounded-xl",

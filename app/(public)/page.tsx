@@ -42,9 +42,11 @@ export default function LandingPage() {
               priority
             />
             <div>
-              <span className="font-bold text-xl text-slate-900 tracking-tight">
-                ContextCafe
-              </span>
+             <div className="flex items-baseline">
+                <span className="font-black text-slate-900 font-sans text-2xl sm:text-2xl tracking-tight">
+                     Context<span className="text-[#0F62FE]">Cafe</span>
+                  </span>
+            </div>
               <p className="text-xs text-slate-500 hidden sm:block font-medium">
                 Legal Intelligence Operating System
               </p>
@@ -58,14 +60,6 @@ export default function LandingPage() {
             <a href="#tools" className="hover:text-blue-600 transition-colors">Tools</a>
           </div>
 
-          <div className="flex items-center gap-3">
-            <Link href="/advocates">
-              <Button variant="glow" size="sm" className="gap-2 text-sm">
-                <span>Advocates Portal</span>
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-            </Link>
-          </div>
         </nav>
       </header>
 
@@ -101,9 +95,6 @@ export default function LandingPage() {
                 <Image src="/logo.svg" alt="ContextCafe" width={24} height={24} className="h-6 w-auto" />
                 <span className="text-sm font-bold text-slate-900">Bare Act & Section Research Engine</span>
               </div>
-              <Badge variant="default" className="text-xs">
-                Active Legal Index
-              </Badge>
             </div>
 
             <div className="space-y-4">
@@ -136,7 +127,7 @@ export default function LandingPage() {
       {/* Features Section */}
       <section id="features" className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-16 border-t border-slate-200">
         <div className="text-center mb-10">
-          <Badge variant="outline" className="mb-2.5 text-xs">Core Platform</Badge>
+
           <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">Platform Capabilities</h2>
         </div>
 
@@ -207,8 +198,8 @@ export default function LandingPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative z-10">
             <div>
-              <Badge variant="default" className="mb-3 text-xs">Advocates Portal</Badge>
-              <h3 className="text-2xl font-bold text-slate-900 mb-3 tracking-tight">Designed for Daily Court Practice</h3>
+              <div className="text-4xl font-bold text-slate-900 mb-3 tracking-tight">Advocates Portal</div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3 tracking-tight">Designed for Daily Court Practice</h3>
               <p className="text-slate-600 text-sm leading-relaxed mb-6">
                 Fast, reliable access to Indian bare acts and legal provisions without clunky PDFs or distracting ads.
               </p>
@@ -224,39 +215,23 @@ export default function LandingPage() {
                 </li>
               </ul>
               <Link href="/advocates">
-                <Button variant="glow" className="gap-2 text-sm h-11 px-6">
+                <Button variant="primary" className="gap-2 text-sm h-11 px-6">
                   <span>Open Advocates Portal</span>
                   <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>
             </div>
-
-            <div className="p-5 rounded-lg bg-slate-50 border border-slate-200">
-              <div className="flex items-center gap-3 mb-4">
-                <Image src="/logo.png" alt="ContextCafe Logo" width={32} height={32} className="h-8 w-auto rounded-md" />
-                <div>
-                  <div className="text-xs font-bold text-slate-900">ContextCafe Advocates Engine</div>
-                  <div className="text-[11px] text-slate-500">Legal Intelligence Platform</div>
-                </div>
-              </div>
-              <div className="p-3.5 rounded-lg bg-white border border-slate-200 text-xs text-slate-800 space-y-1.5">
-                <div className="font-semibold text-blue-700 text-sm">Section 63 (BSA 2023)</div>
-                <p className="text-xs text-slate-700 leading-relaxed">
-                  Admissibility of electronic records — replaces Section 65B of the Indian Evidence Act 1872.
-                </p>
-              </div>
             </div>
-          </div>
+           
         </div>
+      
       </section>
 
       {/* Tools Index Section */}
-      <section id="tools" className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-16 border-t border-slate-200">
+      <section id="tools" className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-16 border-t border-slate-200 justify-center">
         <div className="text-center mb-10">
-          <Badge variant="outline" className="mb-2.5 text-xs border-blue-200 text-blue-800 bg-blue-50/60">
-            Tool Directory
-          </Badge>
-          <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">
+          <div className="text-4xl font-extrabold text-slate-900 mb-3 tracking-tight">Tools Directory</div>
+          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">
             Legal & Document Tools Index
           </h2>
           <p className="text-slate-600 text-sm max-w-xl mx-auto mt-2">
@@ -265,7 +240,7 @@ export default function LandingPage() {
         </div>
 
         {/* Modular Tool Cards Index Grid with rich solid backgrounds and top black gradient */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative z-10">
           {/* Card 1: PDFWorks (Featured Premier Tool) */}
           <div className="glass-panel p-6 sm:p-7 rounded-xl border border-slate-200/90 bg-white shadow-md hover:border-slate-400 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-pointer relative overflow-hidden">
             {/* Top Black Gradient Accent Line */}
@@ -274,21 +249,23 @@ export default function LandingPage() {
             <div className="absolute -top-16 -right-16 w-36 h-36 bg-slate-900/5 rounded-full blur-2xl pointer-events-none group-hover:bg-slate-900/10 transition-colors" />
 
             <div className="relative z-10">
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex items-start justify-left gap-4 mb-4">
                 <div className="h-11 w-11 rounded-lg bg-blue-600 text-white flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform duration-300">
                   <FileText className="h-5.5 w-5.5 stroke-[2.2]" />
                 </div>
-                <Badge variant="glow" className="text-[10px] py-0.5 px-2.5 font-semibold">
-                  100% Client-Side
-                </Badge>
+                <div >
+                <span className="font-black text-slate-900 font-sans text-md sm:text-2xl tracking-tight">
+                  PDF<span className="text-[#0F62FE]">Works</span>
+                </span>
+                <span className="text-lg font-bold text-slate-900 ml-1.5 tracking-tight">
+                     Suite
+              </span>
+              </div>
               </div>
 
-              <h3 className="text-lg font-bold text-slate-900 mb-1 tracking-tight">
-                PDFWorks Suite
+              <h3 className="text-lg font-semibold text-slate-900 mb-1 tracking-tight">
+               Local-First Legal PDF Workspace
               </h3>
-              <p className="text-xs font-medium text-slate-500 mb-3">
-                Local-First Legal PDF Workspace
-              </p>
               <p className="text-slate-600 text-xs leading-relaxed mb-5">
                 Compress court petitions under portal limits, merge trial exhibits, extract order pages, and convert photos into clean A4 PDFs with zero server uploads.
               </p>
@@ -307,106 +284,8 @@ export default function LandingPage() {
 
             <div className="relative z-10">
               <Link href="/tools/pdf">
-                <Button variant="glow" className="w-full gap-2 text-xs h-9.5 font-bold group-hover:bg-blue-700 transition-colors">
+                <Button variant="primary" className="w-full gap-2 text-xs h-9.5 font-bold">
                   <span>Launch PDFWorks</span>
-                  <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform duration-200" />
-                </Button>
-              </Link>
-            </div>
-          </div>
-
-          {/* Card 2: BNS vs IPC Converter Tool */}
-          <div className="glass-panel p-6 sm:p-7 rounded-xl border border-slate-200/90 bg-white shadow-md hover:border-slate-400 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-pointer relative overflow-hidden">
-            {/* Top Black Gradient Accent Line */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-slate-950 via-slate-800 to-slate-950 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            {/* Ambient Background Glow */}
-            <div className="absolute -top-16 -right-16 w-36 h-36 bg-slate-900/5 rounded-full blur-2xl pointer-events-none group-hover:bg-slate-900/10 transition-colors" />
-
-            <div className="relative z-10">
-              <div className="flex items-center justify-between mb-4">
-                <div className="h-11 w-11 rounded-lg bg-indigo-600 text-white flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform duration-300">
-                  <Scale className="h-5.5 w-5.5 stroke-[2.2]" />
-                </div>
-                <Badge variant="outline" className="text-[10px] py-0.5 px-2.5 font-semibold text-indigo-700 bg-indigo-50/60 border-indigo-200/80">
-                  Legal Engine
-                </Badge>
-              </div>
-
-              <h3 className="text-lg font-bold text-slate-900 mb-1 tracking-tight">
-                BNS ⇄ IPC Converter
-              </h3>
-              <p className="text-xs font-medium text-slate-500 mb-3">
-                Criminal Law Section Cross-Mapping
-              </p>
-              <p className="text-slate-600 text-xs leading-relaxed mb-5">
-                Instantly map new Bharatiya Nyaya Sanhita (BNS 2023) provisions against Indian Penal Code (IPC 1860) sections with punishment and bailability data.
-              </p>
-
-              <div className="flex flex-wrap gap-1.5 mb-6">
-                {["BNS 2023", "IPC 1860", "BNSS / CrPC", "BSA 2023"].map((tag) => (
-                  <span
-                    key={tag}
-                    className="inline-block rounded-md bg-slate-100 px-2 py-0.5 text-[10px] font-medium text-slate-700 group-hover:bg-slate-200/80 group-hover:text-slate-900 transition-colors duration-200"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="relative z-10">
-              <Link href="/advocates">
-                <Button variant="outline" className="w-full gap-2 text-xs h-9.5 font-bold border-slate-200 text-slate-800 hover:bg-slate-100 hover:text-slate-900 hover:border-slate-300 transition-colors">
-                  <span>Open Converter</span>
-                  <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform duration-200" />
-                </Button>
-              </Link>
-            </div>
-          </div>
-
-          {/* Card 3: Bare Act & Section Lookup */}
-          <div className="glass-panel p-6 sm:p-7 rounded-xl border border-slate-200/90 bg-white shadow-md hover:border-slate-400 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-pointer relative overflow-hidden">
-            {/* Top Black Gradient Accent Line */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-slate-950 via-slate-800 to-slate-950 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            {/* Ambient Background Glow */}
-            <div className="absolute -top-16 -right-16 w-36 h-36 bg-slate-900/5 rounded-full blur-2xl pointer-events-none group-hover:bg-slate-900/10 transition-colors" />
-
-            <div className="relative z-10">
-              <div className="flex items-center justify-between mb-4">
-                <div className="h-11 w-11 rounded-lg bg-emerald-600 text-white flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform duration-300">
-                  <BookOpen className="h-5.5 w-5.5 stroke-[2.2]" />
-                </div>
-                <Badge variant="outline" className="text-[10px] py-0.5 px-2.5 font-semibold text-emerald-700 bg-emerald-50/60 border-emerald-200/80">
-                  Search & Index
-                </Badge>
-              </div>
-
-              <h3 className="text-lg font-bold text-slate-900 mb-1 tracking-tight">
-                Bare Acts Ingestion
-              </h3>
-              <p className="text-xs font-medium text-slate-500 mb-3">
-                1,200+ Central & State Statutes
-              </p>
-              <p className="text-slate-600 text-xs leading-relaxed mb-5">
-                Clean digital repository of Indian legislation with instantaneous keyword lookup, section provisions, and one-click citation copying for advocates.
-              </p>
-
-              <div className="flex flex-wrap gap-1.5 mb-6">
-                {["Central Acts", "State Statutes", "One-Click Copy", "Live Stream"].map((tag) => (
-                  <span
-                    key={tag}
-                    className="inline-block rounded-md bg-slate-100 px-2 py-0.5 text-[10px] font-medium text-slate-700 group-hover:bg-slate-200/80 group-hover:text-slate-900 transition-colors duration-200"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="relative z-10">
-              <Link href="/bare-acts">
-                <Button variant="outline" className="w-full gap-2 text-xs h-9.5 font-bold border-slate-200 text-slate-800 hover:bg-slate-100 hover:text-slate-900 hover:border-slate-300 transition-colors">
-                  <span>View Ingested Acts</span>
                   <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform duration-200" />
                 </Button>
               </Link>
